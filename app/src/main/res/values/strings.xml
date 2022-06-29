@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Onboarding</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="body">Join an activity. Start a challenges and follow-up your progress.</string>
+    <string name="title1">Holistic approach</string>
+    <string name="log_in_header">Sign In</string>
+    <string name="forgot_password"><font color='#00000'>I forgot my </font><u><font color='#FF9E9E'>password</font></u></string>
+    <string name="create_account"><u>Create new account</u></string>
+    <string name="or">or</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_email_hint">E-mail</string>
+</resources>
