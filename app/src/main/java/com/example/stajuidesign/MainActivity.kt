@@ -55,18 +55,28 @@ class MainActivity : AppCompatActivity() {
                     toolbar.setBackgroundResource(R.color.background_white)
                     bottom_nav.visibility = View.GONE
                     window.setStatusBarColor(resources.getColor(R.color.background_white))
+                    binding.notificationIcon.visibility = View.GONE
                 }
 
                 resources.getResourceName(R.id.login_fragment_des) -> dest.apply {
                     toolbar.setBackgroundResource(R.color.white)
                     bottom_nav.visibility = View.GONE
                     window.setStatusBarColor(resources.getColor(R.color.white))
+                    binding.notificationIcon.visibility = View.GONE
                 }
+                resources.getResourceName(R.id.home_fragment_des) -> dest.apply {
+                    toolbar.setBackgroundResource(R.color.theme_color)
+                    bottom_nav.visibility = View.VISIBLE
+                    window.setStatusBarColor(resources.getColor(R.color.theme_color))
+                    binding.notificationIcon.visibility = View.VISIBLE
+                }
+
 
                 else -> dest.apply {
                     toolbar.setBackgroundResource(R.color.theme_color)
                     bottom_nav.visibility = View.VISIBLE
                     window.setStatusBarColor(resources.getColor(R.color.theme_color))
+                    binding.notificationIcon.visibility = View.GONE
                 }
             }
 
