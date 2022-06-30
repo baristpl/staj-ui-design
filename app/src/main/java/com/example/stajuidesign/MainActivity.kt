@@ -1,45 +1,80 @@
 package com.example.stajuidesign
 
 import android.content.res.Resources
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.view.Window
+import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import com.example.stajuidesign.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
-
+        val toolbar = binding.toolbar
         setSupportActionBar(toolbar)
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+
         val navController = navHostFragment.navController
 
         appBarConfiguration = AppBarConfiguration(setOf(R.id.onboard_des))
+
         setupActionBar(navController, appBarConfiguration)
+        setupBottomNavigatonBar(navController)
+
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
+            val bottom_nav = binding.bottomNav
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            val window: Window = window
+
             val dest: String = try {
                 resources.getResourceName(destination.id)
             } catch (e: Resources.NotFoundException) {
                 Integer.toString(destination.id)
             }
-            if (dest == resources.getResourceName(R.id.onboard_des)) {
-                //supportActionBar?.hide()
-                toolbar.setBackgroundResource(R.color.backgorund_white)
-            } else
-                //supportActionBar?.show()
-                toolbar.setBackgroundResource(R.color.white)
+
+            when (dest) {
+                resources.getResourceName(R.id.onboard_des) -> dest.apply {
+                    toolbar.setBackgroundResource(R.color.background_white)
+                    bottom_nav.visibility = View.GONE
+                    window.setStatusBarColor(resources.getColor(R.color.background_white))
+                }
+                resources.getResourceName(R.id.home_fragment_des) -> dest.apply {
+                    toolbar.setBackgroundResource(R.color.theme_color)
+                    bottom_nav.visibility = View.VISIBLE
+                    window.setStatusBarColor(resources.getColor(R.color.theme_color))
+                }
+                else -> dest.apply {
+                    toolbar.setBackgroundResource(R.color.white)
+                    bottom_nav.visibility = View.GONE
+                    window.setStatusBarColor(resources.getColor(R.color.white))
+                }
+            }
+
         }
+    }
+
+    private fun setupBottomNavigatonBar(navController: NavController) {
+        val bottom_nav = binding.bottomNav
+        bottom_nav.setupWithNavController(navController)
     }
 
     private fun setupActionBar(
