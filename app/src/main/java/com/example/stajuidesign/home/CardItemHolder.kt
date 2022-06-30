@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.stajuidesign.R
 
-class CardViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
+class CardItemHolder(val view: View) : RecyclerView.ViewHolder(view) {
     val image: ImageView
     val header: TextView
     val description: TextView

@@ -101,7 +101,7 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:background="#F8FAFE"
-            android:fontFamily="@font/montserrat_alternates_bold"
+            android:fontFamily="@font/montserrat_bold"
             android:text="@string/or"
             android:textAlignment="center"
             android:textColor="@color/black"

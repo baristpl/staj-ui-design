@@ -48,7 +48,7 @@
             android:layout_height="36dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:fontFamily="@font/montserrat_alternates_bold"
+            android:fontFamily="@font/montserrat_bold"
             android:gravity="center_horizontal|bottom"
             android:lineSpacingExtra="-2sp"
             android:text="@string/title1"

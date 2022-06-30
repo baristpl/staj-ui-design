@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.stajuidesign.R
 import com.example.stajuidesign.databinding.FragmentHomeBinding
-import com.example.stajuidesign.databinding.FragmentViewPagerBinding
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -28,40 +27,42 @@ class HomeFragment : Fragment() {
 
         val programRecycler = binding.programsRecycler
 
-        val challenges = arrayListOf<RecyclerView>()
-        challenges.apply {
+        val challengeRecyclers = arrayListOf<RecyclerView>()
+        challengeRecyclers.apply {
             add(binding.challengeRecycler1)
             add(binding.challengeRecycler2)
             add(binding.challengeRecycler3)
         }
 
-        val programContentList = arrayListOf<CardViewModel>()
+        val programContentList = arrayListOf<CardItemModel>()
 
         for (i in 1..2) {
             programContentList.add(
-                CardViewModel(
-                    R.drawable.program_one_image,
+                CardItemModel(
+                    R.drawable.program_image_one,
                     R.string.program_header,
                     R.string.program_description,
                     R.string.program_info
-                )
+                ).apply {
+                    destination = R.id.challenge_detail_des
+                }
             )
 
             programContentList.add(
-                CardViewModel(
-                    R.drawable.program_two_image,
-                    R.string.program_header,
+                CardItemModel(
+                    R.drawable.program_image_two,
+                    R.string.program_header2,
                     R.string.program_description,
                     R.string.program_info
                 )
             )
         }
 
-        val challengeContentList = arrayListOf<CardViewModel>()
+        val challengeContentList = arrayListOf<CardItemModel>()
 
         for (i in 1..3) {
             challengeContentList.add(
-                CardViewModel(
+                CardItemModel(
                     R.drawable.challenge_image,
                     R.string.challenge_header,
                     R.string.challenge_description,
@@ -73,7 +74,7 @@ class HomeFragment : Fragment() {
         val programAdapter = CardRecyclerAdapter(programContentList)
         val challengeAdapter = CardRecyclerAdapter(challengeContentList)
 
-        challenges.forEach {
+        challengeRecyclers.forEach {
             it.layoutManager = LinearLayoutManager(
                 view.context,
                 RecyclerView.HORIZONTAL,

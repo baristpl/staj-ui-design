@@ -7,6 +7,8 @@ import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
+import androidx.navigation.NavOptions
+import androidx.navigation.NavOptionsBuilder
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -14,8 +16,6 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.stajuidesign.databinding.ActivityMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
-
 
 class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -27,14 +27,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val toolbar = binding.toolbar
+
         setSupportActionBar(toolbar)
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-
         val navController = navHostFragment.navController
-
-        appBarConfiguration = AppBarConfiguration(setOf(R.id.onboard_des))
+        appBarConfiguration = AppBarConfiguration(setOf(R.id.onboard_des, R.id.home_fragment_des))
 
         setupActionBar(navController, appBarConfiguration)
         setupBottomNavigatonBar(navController)
@@ -57,15 +56,17 @@ class MainActivity : AppCompatActivity() {
                     bottom_nav.visibility = View.GONE
                     window.setStatusBarColor(resources.getColor(R.color.background_white))
                 }
-                resources.getResourceName(R.id.home_fragment_des) -> dest.apply {
-                    toolbar.setBackgroundResource(R.color.theme_color)
-                    bottom_nav.visibility = View.VISIBLE
-                    window.setStatusBarColor(resources.getColor(R.color.theme_color))
-                }
-                else -> dest.apply {
+
+                resources.getResourceName(R.id.login_fragment_des) -> dest.apply {
                     toolbar.setBackgroundResource(R.color.white)
                     bottom_nav.visibility = View.GONE
                     window.setStatusBarColor(resources.getColor(R.color.white))
+                }
+
+                else -> dest.apply {
+                    toolbar.setBackgroundResource(R.color.theme_color)
+                    bottom_nav.visibility = View.VISIBLE
+                    window.setStatusBarColor(resources.getColor(R.color.theme_color))
                 }
             }
 

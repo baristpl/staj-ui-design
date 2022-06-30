@@ -17,7 +17,20 @@
     <string name="try_challenge">Try Challenge</string>
     <string name="challenge_header">Water Fasting</string>
     <string name="challenge_description">Detox and Rejevunation,\nMental Health</string>
-    <string name="challenge_info">Lorem ipsum dolor sit amet... /nLorem ipsum dolor sit amet... /nLorem ipsum dolor sit amet... </string>
-
+    <string name="challenge_info">Lorem ipsum dolor sit amet… \nLorem ipsum dolor sit amet… \nLorem ipsum dolor sit amet… </string>
+    <string name="detail_title1">16:8 Intermitting Fasting</string>
+    <string name="detail_title2">Description</string>
+    <string name="detail_header">Detox and Rejuvanation Program</string>
+    <string name="detail_content">Intermittent fasting(IF) is not a diet, it’s an eating pattern that cycles between periods of fasting and eating. Intermittent fasting doesn’t change what you eat, it changes when you eat.
+In this respect, it’s not a diet in the conventional</string>
+    <string name="fav_counter">com.example.onboarding.fav_counter</string>
+    <string name="program_header2">14 Day Fasting Program</string>
+    <string name="welcome_user">Welcome Univenn</string>
+    <string name="menu_item1">Profile Settings</string>
+    <string name="menu_item2">Articles</string>
+    <string name="menu_item3">Reminders</string>
+    <string name="menu_item4">Application Settings</string>
+    <string name="menu_item5">Premium</string>
+    <string name="profile_favorites">Favorites</string>
 
 </resources>

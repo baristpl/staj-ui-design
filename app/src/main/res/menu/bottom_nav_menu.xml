@@ -7,8 +7,8 @@
         android:title="Home"/>
 
     <item
-        android:id="@+id/user_profile_des"
-        android:icon="@drawable/bottom_nav_menu_profile"
-        android:title="Favorites"/>
+        android:id="@+id/profile_fragment_des"
+        android:icon="@drawable/bottom_nav_profile"
+        android:title="Profile"/>
 
 </menu>
