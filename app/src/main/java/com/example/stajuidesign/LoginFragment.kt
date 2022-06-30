@@ -9,41 +9,47 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.example.stajuidesign.databinding.ActivityMainBinding
+import com.example.stajuidesign.databinding.FragmentLoginBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 const val EMAIL = "dummy@univenn.com"
 const val PASSWORD = "123456"
+
 class LoginFragment : Fragment() {
+    private var _binding: FragmentLoginBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val emailInput = view.findViewById<EditText>(R.id.email_edit)
-        val passwordInput = view.findViewById<EditText>(R.id.password_edit)
-        val signInButton = view.findViewById<Button>(R.id.sign_in_button)
+        val emailInput = binding.emailEdit
+        val passwordInput = binding.passwordEdit
+        val signInButton = binding.signInButton
 
         signInButton.setOnClickListener {
             val eMail = emailInput.text.toString()
             val password = passwordInput.text.toString()
-            var passwordAuthentication = false
-            var eMailAuthentication = false
 
-            if (eMail == EMAIL){
-                eMailAuthentication = true
-                if (password == PASSWORD){
-                    passwordAuthentication = true
+            if (eMail == EMAIL) {
+                if (password == PASSWORD) {
                     findNavController().navigate(R.id.home_fragment_des)
-                }else Toast.makeText(activity,
-                    "INCORRECT PASSWORD!", Toast.LENGTH_LONG).show();
-            }else Toast.makeText(activity,
-                "UNREGISTERED EMAIL!", Toast.LENGTH_LONG).show();
-
+                } else Toast.makeText(
+                    activity,
+                    "INCORRECT PASSWORD!", Toast.LENGTH_LONG
+                ).show();
+            } else Toast.makeText(
+                activity,
+                "UNREGISTERED EMAIL!", Toast.LENGTH_LONG
+            ).show();
         }
     }
 }

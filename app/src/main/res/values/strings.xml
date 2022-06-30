@@ -9,4 +9,15 @@
     <string name="or">or</string>
     <string name="login_password_hint">Password</string>
     <string name="login_email_hint">E-mail</string>
+    <string name="home_featured">Featured</string>
+    <string name="program_header">16:8 Intermittant \nFasting</string>
+    <string name="program_description">Rejevunation, Get Fit, Mental \nHealth</string>
+    <string name="program_info">12 challenges</string>
+    <string name="home_programs">Programs</string>
+    <string name="try_challenge">Try Challenge</string>
+    <string name="challenge_header">Water Fasting</string>
+    <string name="challenge_description">Detox and Rejevunation,\nMental Health</string>
+    <string name="challenge_info">Lorem ipsum dolor sit amet... /nLorem ipsum dolor sit amet... /nLorem ipsum dolor sit amet... </string>
+
+
 </resources>

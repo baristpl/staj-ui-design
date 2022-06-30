@@ -27,13 +27,5 @@ class ViewPagerContentFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val position = arguments?.getInt("position")
-        Log.d("content_position","$position")
-        val onboardImage = view.findViewById<ImageView>(R.id.onboard_image)
-
-        when(position){
-            0 -> onboardImage.setImageResource(R.drawable.onboard_design)
-            1 -> onboardImage.setImageResource(R.drawable.onboard_design)
-        }
     }
 }

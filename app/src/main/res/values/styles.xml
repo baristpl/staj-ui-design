@@ -35,7 +35,7 @@
         </item>
 
         <item name="android:fontFamily">
-            @font/montserrat_alternates_bold
+            @font/montserrat_bold
         </item>
 
     </style>
@@ -51,6 +51,62 @@
 
         <item name="background">
             @drawable/log_in_border
+        </item>
+    </style>
+
+    <style name="home_header">
+        <item name="android:textSize">
+            15sp
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+        <item name="android:fontFamily">
+            @font/montserrat_semibold
+        </item>
+    </style>
+
+    <style name="program_header">
+        <item name="android:textSize">
+            16sp
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+        <item name="android:fontFamily">
+            @font/montserrat_bold
+        </item>
+    </style>
+
+    <style name="program_description">
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+        <item name="android:fontFamily">
+            @font/montserrat_thin
+        </item>
+    </style>
+
+    <style name="program_challenge">
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:textColor">
+            #C4C4C4
+        </item>
+
+        <item name="android:fontFamily">
+            @font/montserrat_thin
         </item>
     </style>
 

@@ -17,7 +17,7 @@
         tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/home_fragment_des"
-        android:name="com.example.stajuidesign.HomeFragment"
+        android:name="com.example.stajuidesign.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
 </navigation>
