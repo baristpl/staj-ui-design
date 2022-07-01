@@ -26,16 +26,9 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val programRecycler = binding.programsRecycler
-
-        val challengeRecyclers = arrayListOf<RecyclerView>()
-        challengeRecyclers.apply {
-            add(binding.challengeRecycler1)
-            add(binding.challengeRecycler2)
-            add(binding.challengeRecycler3)
-        }
+        val challengeRecycler = binding.challengeRecycler
 
         val programContentList = arrayListOf<CardItemModel>()
-
         for (i in 1..2) {
             programContentList.add(
                 CardItemModel(
@@ -47,19 +40,19 @@ class HomeFragment : Fragment() {
                     destination = R.id.challenge_detail_des
                 }
             )
-
             programContentList.add(
                 CardItemModel(
                     R.drawable.program_image_two,
                     R.string.program_header2,
                     R.string.program_description,
                     R.string.program_info
-                )
+                ).apply {
+                    destination = R.id.challenge_detail_des
+                }
             )
         }
 
         val challengeContentList = arrayListOf<CardItemModel>()
-
         for (i in 1..3) {
             challengeContentList.add(
                 CardItemModel(
@@ -67,21 +60,23 @@ class HomeFragment : Fragment() {
                     R.string.challenge_header,
                     R.string.challenge_description,
                     R.string.challenge_info
-                )
+                ).apply {
+                    destination = R.id.challenge_detail_des
+                }
             )
         }
 
         val programAdapter = CardRecyclerAdapter(programContentList)
         val challengeAdapter = CardRecyclerAdapter(challengeContentList)
 
-        challengeRecyclers.forEach {
-            it.layoutManager = LinearLayoutManager(
-                view.context,
-                RecyclerView.HORIZONTAL,
-                false
-            )
-            it.adapter = challengeAdapter
-        }
+            challengeRecycler.apply {
+                layoutManager = LinearLayoutManager(
+                    view.context,
+                    RecyclerView.VERTICAL,
+                    false
+                )
+                adapter = challengeAdapter
+            }
 
         programRecycler.apply {
             layoutManager = LinearLayoutManager(

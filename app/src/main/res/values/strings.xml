@@ -32,5 +32,7 @@ In this respect, it’s not a diet in the conventional</string>
     <string name="menu_item4">Application Settings</string>
     <string name="menu_item5">Premium</string>
     <string name="profile_favorites">Favorites</string>
+    <string name="join_now">JOIN NOW</string>
+    <string name="featured_text">EXPLORE\nNOW</string>
 
 </resources>

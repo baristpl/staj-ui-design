@@ -27,18 +27,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <ImageView
+                <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ellipse"
-                    android:src="@drawable/profile_image_edit"
-                    android:translationZ="6dp"
+                    android:background="@drawable/profile_edit_button"
+                    android:translationZ="8dp"
                     app:layout_constraintBottom_toBottomOf="@+id/profile_image_container"
                     app:layout_constraintHorizontal_bias="1.1"
                     app:layout_constraintVertical_bias="0.2"
                     app:layout_constraintEnd_toEndOf="@+id/profile_image_container"
                     app:layout_constraintStart_toStartOf="@+id/profile_image_container"
-                    app:layout_constraintTop_toTopOf="@+id/profile_image_container" />
+                    app:layout_constraintTop_toTopOf="@+id/profile_image_container"
+                    android:clickable="true"/>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/profile_image_container"

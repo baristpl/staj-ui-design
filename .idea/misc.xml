@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.14059872182980154" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.247" />
         <entry key="app/src/main/res/drawable/action_bar_background.xml" value="0.156" />
         <entry key="app/src/main/res/drawable/bottom_nav_foryou.xml" value="0.1025" />
@@ -14,6 +15,7 @@
         <entry key="app/src/main/res/drawable/ellipse.xml" value="0.247" />
         <entry key="app/src/main/res/drawable/fav_icon.xml" value="0.229" />
         <entry key="app/src/main/res/drawable/favorite_icon.xml" value="0.2635" />
+        <entry key="app/src/main/res/drawable/featured_button_background.xml" value="0.247" />
         <entry key="app/src/main/res/drawable/featured_layer_first.xml" value="0.247" />
         <entry key="app/src/main/res/drawable/home_featured_new.xml" value="0.5646994018554689" />
         <entry key="app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.229" />
@@ -26,7 +28,9 @@
         <entry key="app/src/main/res/drawable/next_button.xml" value="0.306" />
         <entry key="app/src/main/res/drawable/notification.xml" value="0.247" />
         <entry key="app/src/main/res/drawable/onboard_design_background.xml" value="0.2385" />
+        <entry key="app/src/main/res/drawable/profile_edit_button.xml" value="0.247" />
         <entry key="app/src/main/res/drawable/profile_icon_app_settings.xml" value="0.251" />
+        <entry key="app/src/main/res/drawable/profile_image_edit.xml" value="0.247" />
         <entry key="app/src/main/res/drawable/round_button.xml" value="0.2635" />
         <entry key="app/src/main/res/drawable/selected_pager_dot.xml" value="0.306" />
         <entry key="app/src/main/res/drawable/seperator.xml" value="0.284" />
@@ -42,9 +46,9 @@
         <entry key="app/src/main/res/layout/challenge_item.xml" value="0.41794871794871796" />
         <entry key="app/src/main/res/layout/challenge_item_wide.xml" value="0.366876220703125" />
         <entry key="app/src/main/res/layout/fragment_challenge_detail.xml" value="0.32583770751953134" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2171875" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.4656398104265403" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.597300833242911" />
-        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.5421348314606742" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.5640362225097024" />
         <entry key="app/src/main/res/layout/fragment_view_pager.xml" value="0.409375" />
         <entry key="app/src/main/res/layout/fragment_view_pager_content.xml" value="0.25" />
         <entry key="app/src/main/res/layout/menu_item.xml" value="0.4234375" />

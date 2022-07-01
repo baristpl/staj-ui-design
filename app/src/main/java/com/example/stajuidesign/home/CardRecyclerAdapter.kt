@@ -27,7 +27,7 @@ class CardRecyclerAdapter(private val data: ArrayList<CardItemModel>) :
         holder.info.setText(data[position].infoSource)
 
         if (data[position].destination != null){
-            holder.image.setOnClickListener {
+            holder.cardView.setOnClickListener {
                 holder.image.findNavController().navigate(data[position].destination!!)
             }
         }

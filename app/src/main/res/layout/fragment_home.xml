@@ -34,10 +34,42 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/header_feature">
 
-            <ImageView
-                android:layout_width="327dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/home_featured" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="15dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/featured_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/join_now"
+                    android:textSize="10sp"
+                    app:cornerRadius="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/featured_text"
+                    android:textColor="@color/theme_color"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toTopOf="@+id/button2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 
@@ -75,29 +107,13 @@
             app:layout_constraintTop_toBottomOf="@+id/programs_recycler" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/challenge_recycler_1"
-            android:layout_width="match_parent"
+            android:id="@+id/challenge_recycler"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/challenge_text" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/challenge_recycler_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/cardView"
-            app:layout_constraintTop_toBottomOf="@id/challenge_recycler_1" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/challenge_recycler_3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/cardView"
-            app:layout_constraintTop_toBottomOf="@id/challenge_recycler_2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
