@@ -6,10 +6,7 @@ import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavController
-import androidx.navigation.NavOptions
-import androidx.navigation.NavOptionsBuilder
-import androidx.navigation.findNavController
+import androidx.navigation.*
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -81,11 +78,20 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+
     }
 
     private fun setupBottomNavigatonBar(navController: NavController) {
         val bottom_nav = binding.bottomNav
+        val navHomeOpt = NavOptions.Builder().setPopUpTo(R.id.home_fragment_des, true, false).build()
+        val navProfileOpt = NavOptions.Builder().setPopUpTo(R.id.profile_fragment_des, true, false).build()
+
         bottom_nav.setupWithNavController(navController)
+        bottom_nav.setOnItemSelectedListener {
+            if (it.itemId == R.id.home_fragment_des) navController.navigate(R.id.home_fragment_des, null, navHomeOpt)
+            else navController.navigate(R.id.profile_fragment_des, null, navProfileOpt)
+             return@setOnItemSelectedListener true
+        }
     }
 
     private fun setupActionBar(
